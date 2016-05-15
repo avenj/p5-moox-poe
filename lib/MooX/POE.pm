@@ -113,12 +113,45 @@ sub STOPALL {
 
 =head1 DESCRIPTION
 
-This role adds a L<POE::Session> and event handling to the class. Can also be
-used the same way with L<Moose>.
+This role adds a L<POE::Session> and event handling to a L<Moo> or L<Moose>
+class.
 
-=head1 BASED ON
+Based on L<MooseX::POE>; usage is similar, but rather than
+providing an C<event> keyword, events are regular methods prefixed with B<on_>
+(see the L</SYNOPSIS> for an example).
 
-This plugin is based on code of L<MooseX::POE>.
+=head1 METHODS
+
+=head2 get_session_id
+
+Returns the L<POE::Session> ID for use with other POE-aware methods.
+
+=head2 yield
+
+=head2 call
+
+=head2 delay
+
+=head2 delay_add
+
+=head2 delay_set
+
+=head2 delay_adjust
+
+=head2 alarm
+
+=head2 alarm_add
+
+=head2 alarm_set
+
+=head2 alarm_adjust
+
+=head2 alarm_remove
+
+=head2 alarm_remove_all
+
+These methods are aliases for the L<POE::Kernel> methods of the same name &
+guarantee posting to the object's session.
 
 =head1 SUPPORT
 
